@@ -15,11 +15,10 @@ public class Square extends Shapes {
 
 		this.app = app;
 		
-		R = (int) (Math.random()*255);
-		G = (int) (Math.random()*255);
-		B = (int) (Math.random()*255);
-	
-		
+		R = 154; 
+		G = 154;
+		B = 154;
+
 		splitValues();
 
 	}
@@ -45,7 +44,7 @@ public class Square extends Shapes {
 	
 	public void draw() {
 		
-		app.square(tam,posX,posY);
+		app.square(posX,posY,tam);
 	    app.fill (R,G,B);
 		app.textSize(tam/2);
 		app.text(value + " ", posX, posY);
@@ -53,6 +52,8 @@ public class Square extends Shapes {
 	}
 
 	public void move() {
+		super.move();
+		super.limit();
 
 	}
 

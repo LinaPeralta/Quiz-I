@@ -17,11 +17,11 @@ public class Circle extends Shapes{
 		super(app, words);
 		
 		
-		R = (int) (Math.random()*255);
-		G = (int) (Math.random()*255);
-		B = (int) (Math.random()*255);
-	
-		
+		R = 96; 
+		G = 24;
+		B = 63;
+				
+
 		splitValues();
 
 	}
@@ -48,7 +48,7 @@ public class Circle extends Shapes{
 	
 	public void draw() {
 		
-		app.circle(tam,posX,posY);
+		app.circle(posX,posY,tam);
 	    app.fill (R,G,B);
 		app.textSize(tam/2);
 		app.text(value + " ", posX, posY);
@@ -56,9 +56,9 @@ public class Circle extends Shapes{
 	}
 	
 	public void move() {
-		
-		//if ()
-		
+		super.move();
+		super.limit();
+
 	}
 
 	public PApplet getApp() {
