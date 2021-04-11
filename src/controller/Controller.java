@@ -9,13 +9,16 @@ public class Controller {
     Logic logic;
 
 	PApplet app;
+	
 
-	public Controller() {
-
+	public Controller(PApplet app) {	
+		this.app=app;
+		
+		logic = new Logic(app);
 	}
 
 	public void draw() {
-		
+		logic.draw();
 
 	}
 

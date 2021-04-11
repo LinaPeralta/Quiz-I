@@ -12,7 +12,7 @@ public class Logic {
 
 	String[] words;
 	
-    Circle circulo;
+  //  Circle circulo;
 
 	ArrayList<Circle> circle;
 	ArrayList<Square> square;
@@ -49,9 +49,14 @@ public class Logic {
 	}
 
 	public void draw() {
-
-    circulo.getClass();
-	circulo.draw();
+		
+		for (int i = 0; i < circle.size(); i++) {
+			circle.get(i).draw();
+		}
+		
+		for (int i = 0; i < square.size(); i++) {
+			square.get(i).draw();
+		}
 		
 
 	}
