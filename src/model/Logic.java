@@ -7,8 +7,12 @@ import processing.core.PApplet;
 public class Logic {
 
 	PApplet app;
+	
+	int R,G,B;
 
 	String[] words;
+	
+    Circle circulo;
 
 	ArrayList<Circle> circle;
 	ArrayList<Square> square;
@@ -24,6 +28,7 @@ public class Logic {
 		square = new ArrayList<Square>();
 		triangle = new ArrayList<Triangle>();
 		
+
 		split();	
 	}
 
@@ -44,6 +49,10 @@ public class Logic {
 	}
 
 	public void draw() {
+
+    circulo.getClass();
+	circulo.draw();
+		
 
 	}
 
