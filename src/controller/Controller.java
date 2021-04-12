@@ -36,7 +36,7 @@ public class Controller {
 //			logic.getSquare().add(actual);
 //			filtro = true;
 //		}
-//	
+	
 
 	}
  

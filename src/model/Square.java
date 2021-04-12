@@ -16,9 +16,9 @@ public class Square extends Shapes {
 		this.app = app;
 		
 		R = 154; 
-		G = 154;
-		B = 154;
-
+		G = 133;
+		B = 81;
+		
 		splitValues();
 
 	}
@@ -53,7 +53,7 @@ public class Square extends Shapes {
 
 	public void move() {
 		super.move();
-		super.limit();
+		//ssuper.limit();
 
 	}
 

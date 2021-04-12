@@ -6,7 +6,8 @@ public abstract class Shapes {
 	
 	protected String words;
 	PApplet app;
-	protected int tam, posX, posY, directionA, directionB, value;
+	protected int tam, posX, posY, directionA, directionB, value,speed;
+	protected boolean stop;
 
 	public Shapes(PApplet app,  String words) {
 		
@@ -16,33 +17,73 @@ public abstract class Shapes {
 	}
 
 	public abstract void draw();
+	
+	public 	Shapes() {
+		this.stop = true;
+
+		
+		this.tam = (int) (Math.random()*60+20);
+		this.posX = (int) (Math.random()*480+20);
+		this.posY = (int) (Math.random()*480+20);
+		this.directionA = (int) (Math.random()*2+0);
+		//Direction for the shapes randomly made
+		if (directionA == 0) {
+			directionA = 1;
+		} else {
+			directionA = -1;
+		}
+		this.directionB = (int) (Math.random()*2+0);
+		if (directionB == 0) {
+			directionB = 1;
+		} else {
+			directionB = -1;
+		}
+		this.value = (int) (Math.random()*20+1);
+		
+		
+	
+		speed = (int)(Math.random()*4+1);
+	}
+	
+	
 
 	public void move() {
 		
-		posX += directionA;
-		posY += directionB;
+		if (stop) {
+			posX += (speed * directionA);
+			posY += (speed * directionA);
+			
+			if (posX < 0 || posX > 800) {
+				directionA = directionA*(-1);
+			}
+			
+			if (posY < 0 || posY > 600) {
+				directionB = directionB*(-1);
+			}
+		}
 		
 	}
 	
-	public void limit() {
-		
-		if(posX-tam/2<0) {
-			directionA = 1;
-		}
-		
-		if(posY-tam/2<0) {
-			directionA = 1;
-		}
-		
-		if(posX+tam/2>500) {
-			directionA = -1 ;
-		}
-		
-		if(posY+tam/2>500) {
-			directionA = -1;
-		}
-		
-	}
+	
+//	public void limit() {
+//		
+//		if(posX-tam/2<0) {
+//			directionA = 1;
+//		}
+//		
+//		if(posY-tam/2<0) {
+//			directionA = 1;
+//		}
+//		
+//		if(posX+tam/2>500) {
+//			directionA = -1 ;
+//		}
+//		
+//		if(posY+tam/2>500) {
+//			directionA = -1;
+//		}
+//		
+//	}
 
 	public String getWords() {
 		return words;

@@ -14,6 +14,7 @@ public class Circle extends Shapes{
 
 	public Circle(PApplet app, String words) {
 		
+		
 		super(app, words);
 		
 		
@@ -53,11 +54,12 @@ public class Circle extends Shapes{
 		app.textSize(tam/2);
 		app.text(value + " ", posX, posY);
 		
+		
 	}
 	
 	public void move() {
 		super.move();
-		super.limit();
+	//	super.limit();
 
 	}
 
