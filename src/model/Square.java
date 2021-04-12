@@ -1,6 +1,7 @@
 package model;
 
 import processing.core.PApplet;
+import processing.core.PConstants;
 
 public class Square extends Shapes {
 
@@ -44,10 +45,14 @@ public class Square extends Shapes {
 	
 	public void draw() {
 		
+		app.noStroke();
+		app.fill (R,G,B);
+		app.rectMode(PConstants.CENTER);
 		app.square(posX,posY,tam);
-	    app.fill (R,G,B);
+	    app.fill (96,24,63);
 		app.textSize(tam/2);
 		app.text(value + " ", posX, posY);
+		
 
 	}
 

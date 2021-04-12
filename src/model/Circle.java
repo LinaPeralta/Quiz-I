@@ -49,10 +49,11 @@ public class Circle extends Shapes{
 	
 	public void draw() {
 		
-		app.circle(posX,posY,tam);
+     	app.circle(posX,posY,tam);
 	    app.fill (R,G,B);
 		app.textSize(tam/2);
 		app.text(value + " ", posX, posY);
+		
 		
 		
 	}

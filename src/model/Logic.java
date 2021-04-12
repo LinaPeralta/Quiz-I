@@ -68,8 +68,7 @@ public class Logic {
 			triangle.get(i).move();
 
 		}
-
-		distShapes();
+	
 
 	}
 
@@ -106,6 +105,9 @@ public class Logic {
 	
 
 	public void distShapes() {
+		
+		
+		
 
 	}
 
