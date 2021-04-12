@@ -26,7 +26,9 @@ public abstract class Shapes {
 		this.posX = (int) (Math.random()*480+20);
 		this.posY = (int) (Math.random()*480+20);
 		this.directionA = (int) (Math.random()*2+0);
-		//Direction for the shapes randomly made
+		
+		
+		//Direccion figuras random
 		if (directionA == 0) {
 			directionA = 1;
 		} else {
@@ -53,11 +55,11 @@ public abstract class Shapes {
 			posX += (speed * directionA);
 			posY += (speed * directionA);
 			
-			if (posX < 0 || posX > 800) {
+			if (posX < 0 || posX > 500) {
 				directionA = directionA*(-1);
 			}
 			
-			if (posY < 0 || posY > 600) {
+			if (posY < 0 || posY > 500) {
 				directionB = directionB*(-1);
 			}
 		}
@@ -148,6 +150,17 @@ public abstract class Shapes {
 	public void setValue(int value) {
 		this.value = value;
 	}
+
+	public boolean isStop() {
+		return stop;
+	}
+
+	public void setStop(boolean stop) {
+		this.stop = stop;
+	}
+	
+	
+	
 	
 	
 	

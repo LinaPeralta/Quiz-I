@@ -9,6 +9,7 @@ public class Logic {
 	PApplet app;
 
 	int R, G, B;
+	private boolean crashA, crashB, crashC;
 
 	String[] words;
 
@@ -71,56 +72,49 @@ public class Logic {
 		distShapes();
 
 	}
+
 	public void stopMove() {
-		
+
 		for (int j = 0; j < circle.size(); j++) {
-		
-//			if (dist(app.mouseX, circle.get(j).getPosX(), app.mouseY, circle.get(j).getPosY())<circle.get(j).getSize()) {
-//				circle.get(j).setStopMove(!circle.get(j).isStop());
-//			}
-	}	
-		
+
+			if (distance(app.mouseX, circle.get(j).getPosX(), app.mouseY, circle.get(j).getPosY()) < circle.get(j)
+					.getTam()) {
+				circle.get(j).setStop(!circle.get(j).isStop());
+			}
+		}
+
+		for (int i = 0; i < square.size(); i++) {
+
+			if (app.mouseX > square.get(i).getPosX() - square.get(i).getTam()
+					&& app.mouseX < square.get(i).getPosX() + square.get(i).getTam()
+					&& app.mouseY > square.get(i).getPosY() - square.get(i).getTam()
+					&& app.mouseY < square.get(i).getPosY() + square.get(i).getTam()) {
+				square.get(i).setStop(!square.get(i).isStop());
+			}
+		}
 
 	}
+	
+	public void stopMoveTriangle() {
+		for (int i = 0; i < triangle.size(); i++) {
+			//Mouse clicked (left) on triangle, it makes it stop
+			if (distance(app.mouseX, triangle.get(i).getPosX(), app.mouseY, triangle.get(i).getPosY())<triangle.get(i).getSides()-10) {
+				triangle.get(i).setStop(!triangle.get(i).isStop());
+			}		
+		}
+	}
+	
 
 	public void distShapes() {
-		
 
-//
-//		// colision entre circulos y cuadrados
-//
-//		for (int i = 0; i < square.size(); i++) {
-//		
-//			
-//			Square square = square.get(i);
-//			for (int j = 0; j < circle.size(); j++) {
-//				// Circle variable
-//				Circle circle = circle.get(j);
-//
-//				// Distance between shapes
-//				if (app.dist(square.getPosX(), square.getPosY(), circle.getPosX(), circle.getPosY()) < circle.getSize()
-//						/ 2) {
-//					crash1 = true;
-//					if (crash1) {
-//						// Addition of both of the values that crashed
-//						int valueTriangle = additionValues(square.getValue(), circle.getValue());
-//						// Adding triangle as a result of the crash
-//						triangleList.add(new Triangle(app, square.getPosX(), square.getPosY(), square.getDir1(),
-//								square.getDir2(), valueTriangle, square.getSpeed()));
-//						// Removing the shapes that crashed
-//						squareList.remove(square);
-//						circleList.remove(circle);
-//						crash1 = false;
-//					}
-//				}
-//			}
-//		}
-//
 	}
-
 
 	public void newShape() {
 
+	}
+
+	private double distance(double x1, double x2, double y1, double y2) {
+		return Math.sqrt((y2 - y1) * (y2 - y1) + (x2 - x1) * (x2 - x1));
 	}
 
 }
